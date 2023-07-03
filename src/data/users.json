@@ -1,0 +1,62 @@
+{
+   "random_users": 
+       [         
+        {"UserName": "Lelia",
+            "Gender": "female",
+            "DateOfBirth": "1985-09-21",
+            "KnownAs": "Chef Lelia",
+            "Interests": "Ullamco voluptate aliquip quis pariatur labore cupidatat voluptate ut.",
+            "City": "Longbranch",
+            "Country": "Oman",
+            "Photos": [
+            {
+                "Url": "https://randomuser.me/api/portraits/women/61.jpg",
+                "IsMain": true
+            }
+            ]
+        },
+        {"UserName": "Nelson",
+        "Gender": "male",
+        "DateOfBirth": "1978-07-26",
+        "KnownAs": "Chef Nelson",
+        "Interests": "Ullamco voluptate aliquip quis pariatur labore cupidatat voluptate ut.",
+        "City": "Elwood",
+        "Country": "United Kingdom",
+        "Photos": [
+        {
+            "Url": "https://randomuser.me/api/portraits/men/82.jpg",
+            "IsMain": true
+        }
+        ]
+       },
+       {"UserName": "Agustine",
+        "Gender": "male",
+        "DateOfBirth": "1991-02-12",
+        "KnownAs": "Cook Agustine",
+        "Interests": "Ullamco voluptate aliquip quis pariatur labore cupidatat voluptate ut.",
+        "City": "Elwood",
+        "Country": "Ireland",
+        "Photos": [
+        {
+            "Url": "https://randomuser.me/api/portraits/men/3.jpg",
+            "IsMain": true
+        }
+        ]
+       },
+       {"UserName": "Zoila",
+        "Gender": "female",
+        "DateOfBirth": "1995-09-21",
+        "KnownAs": "Cook Zoila",
+        "Interests": "Ullamco voluptate aliquip quis pariatur labore cupidatat voluptate ut.",
+        "City": "Mexico",
+        "Country": "Mexico",
+        "Photos": [
+        {
+            "Url": "https://randomuser.me/api/portraits/women/8.jpg",
+            "IsMain": true
+        }
+        ]
+       }
+    ]
+      
+}
