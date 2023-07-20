@@ -12,6 +12,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     px={2}
     py={1}
     rounded={"md"}
+    textColor={"text_hover"}
     _hover={{
       textDecoration: "none",
       bg: "secondary",
@@ -27,7 +28,7 @@ const MenuBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg="primary" px={6} py={2}>
+      <Box  px={6} py={2}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             
@@ -39,7 +40,7 @@ const MenuBar = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>
+            <Box backgroundColor="#FAD87A">
               <Image src={logo} boxSize="80px" objectFit={"cover"} />
             </Box>
             <HStack

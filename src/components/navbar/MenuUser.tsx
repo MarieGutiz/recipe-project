@@ -23,7 +23,7 @@ const MenuUser = () => {
         mr={4}
         leftIcon={<RiAddLine />}
       >
-        Action
+        Add recipe
       </Button>
       <Menu>
         <MenuButton

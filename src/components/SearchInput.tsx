@@ -22,11 +22,12 @@ const SearchInput = () => {
         }
       }}
     >
-      <InputGroup width="50%">
-        <InputLeftElement children={<BsSearch />} />
+      <InputGroup width="100%">
+        <InputLeftElement color={"red"} children={<BsSearch />} />
         <Input
+        backgroundColor={"white"}
           ref={ref}
-          placeholder="What to cook today?...."
+          placeholder="What to cook today?.."
           variant="filled"
           borderRadius={20}
         />
