@@ -12,6 +12,7 @@ import NavBar from "../navbar/NavBar";
 import SearchInput from "../SearchInput";
 
 export default function Banner() {
+ 
   return (
     <>
       <Flex
@@ -32,12 +33,12 @@ export default function Banner() {
           <Box w={"full"} position="absolute" top={0} left={0}>
             <NavBar />
           </Box>
-          <Stack maxW={"2xl"} align={"flex-start"} spacing={4} paddingTop={10}>
+          <Stack maxW={"2xl"} align={"center"} spacing={2} marginTop={20}>
             <Text
               color={"white"}
               fontWeight={700}
               align={"center"}
-              lineHeight={1.1}
+              lineHeight={0.9}
               fontFamily={"Karla"}
               fontSize={useBreakpointValue({
                 base: "3xl",

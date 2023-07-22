@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FcMultipleInputs, FcReading } from "react-icons/fc";
 import { FaUtensils } from "react-icons/fa";
+import RippleAnimation from "./RippleAnimation";
 
 interface FeatureProps {
   title: string;
@@ -27,18 +28,25 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
       paddingX={4}
     >
       <Center w={"full"} backgroundColor={"#fbd87c"} padding={1}>
-        <Flex
+        <Box
+          as={Flex}
           w={16}
           h={16}
           align={"center"}
           justify={"center"}
           color={"white"}
           rounded={"full"}
-          bg={"white"}
           mb={1}
+          position="relative"
+          overflow="hidden"
         >
-          {icon}
-        </Flex>
+          <Box position="absolute" borderRadius="50%">
+            <RippleAnimation />
+          </Box>
+          <Box position={"absolute"} zIndex={"100"}>
+            {icon}
+          </Box>
+        </Box>
       </Center>
 
       <Text fontWeight={700} align={"center"} color={"red"}>
@@ -68,11 +76,9 @@ export default function Features() {
         <Feature
           icon={<Icon as={FaUtensils} w={10} h={10} color={"facebook.900"} />}
           title={"Bon Appétit!"}
-          text={
-            `A delicious food always unite us!.. Get along with yours. So, whether it's a hearty breakfast, a wholesome lunch, or an indulgent dinner, "Bon Appétit!" has you covered.
+          text={`A delicious food always unite us!.. Get along with yours. So, whether it's a hearty breakfast, a wholesome lunch, or an indulgent dinner, "Bon Appétit!" has you covered.
 
-Get Cooking Today!`
-          }
+Get Cooking Today!`}
         />
       </SimpleGrid>
     </Box>

@@ -1,4 +1,13 @@
-import { Box, HStack, IconButton, Link, useDisclosure, Image, Stack, Flex} from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  IconButton,
+  Link,
+  useDisclosure,
+  Image,
+  Stack,
+  Flex,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
@@ -16,7 +25,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     _hover={{
       textDecoration: "none",
       bg: "secondary",
-      textColor:"text_hover"
+      textColor: "text_hover",
     }}
     href={"#"}
   >
@@ -28,10 +37,9 @@ const MenuBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box  px={6} py={2}>
+      <Box px={6} py={2}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            
             padding={3}
             size={"md"}
             icon={isOpen ? <RiCloseLine /> : <AiOutlineBars />}
