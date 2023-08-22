@@ -7,6 +7,7 @@ import {
   Image,
   Stack,
   Flex,
+  Button,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { AiOutlineBars } from "react-icons/ai";
@@ -48,8 +49,19 @@ const MenuBar = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box backgroundColor="#FAD87A">
-              <Image src={logo} boxSize="80px" objectFit={"cover"} />
+            <Box
+              backgroundColor="#FAD87A"
+              as={Button}
+              rounded={"base"}
+              variant={"link"}
+              cursor={"pointer"}
+              p={1}
+            >
+              <Image
+                src={logo}
+                boxSize={{ base: "40px", sm: "30px", md: "60px" }}
+                objectFit="cover"
+              />
             </Box>
             <HStack
               as={"nav"}
@@ -66,7 +78,7 @@ const MenuBar = () => {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
+          <Box pb={4} display={{ md: "none" }} bgColor={"blackAlpha.800"} borderRadius={5}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>

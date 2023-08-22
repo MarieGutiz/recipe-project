@@ -19,9 +19,11 @@ const MenuUser = () => {
       <Button
         variant={"solid"}
         colorScheme={"teal"}
+        fontSize={{ base: "0.7rem", md: "sm" }}
         size={"sm"}
         mr={4}
         leftIcon={<RiAddLine />}
+        
       >
         Add recipe
       </Button>

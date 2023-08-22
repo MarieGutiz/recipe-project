@@ -1,0 +1,11 @@
+.column-resize-line {
+    position: absolute;
+    top: 0;
+    right: -2px; /* Adjust this value as needed */
+    width: 4px; /* Adjust this value to control the line thickness */
+    height: 100%;
+    background-color: #ddd; /* Adjust this value to set the color of the line */
+    z-index: 999;
+    pointer-events: none; /* This prevents the line from blocking mouse events */
+  }
+  

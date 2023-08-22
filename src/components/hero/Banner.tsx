@@ -8,11 +8,9 @@ import {
   Center,
 } from "@chakra-ui/react";
 import Features from "../features/Features";
-import NavBar from "../navbar/NavBar";
 import SearchInput from "../SearchInput";
 
 export default function Banner() {
- 
   return (
     <>
       <Flex
@@ -30,9 +28,9 @@ export default function Banner() {
           px={useBreakpointValue({ base: 4, md: 8 })}
           bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
         >
-          <Box w={"full"} position="absolute" top={0} left={0}>
+          {/* <Box w={"full"} position="absolute" top={0} left={0} zIndex={"100"}>
             <NavBar />
-          </Box>
+          </Box> */}
           <Stack maxW={"2xl"} align={"center"} spacing={2} marginTop={20}>
             <Text
               color={"white"}
@@ -49,7 +47,12 @@ export default function Banner() {
               Cook healthy meals like a pro!
             </Text>
             <Center w={"full"}>
-              <Text color={"whitesmoke"} align={"center"} fontSize="18px" fontFamily={"Karla"}>
+              <Text
+                color={"whitesmoke"}
+                align={"center"}
+                fontSize="18px"
+                fontFamily={"Karla"}
+              >
                 Find a recipe to prepare with love to yours!
               </Text>
             </Center>
