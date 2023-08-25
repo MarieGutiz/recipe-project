@@ -1,28 +1,26 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import useRecipies from "../hooks/useRecipes";
 import DietSelector from "./searchBy/DietSelector";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const { data, error } = useRecipies(search);
   const [selectedDiet, setSelectedDiet] = useState("");
-  if (error) return null;
 
   const handleDietSelector = (diet: string) => {
     setSelectedDiet(diet);
   };
-  // console.log(data?.hits);
+  
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    console.log("select diet -> " + selectedDiet);
     if (ref.current) {
       console.log(ref.current.value);
       console.log("select diet -> " + selectedDiet);
-      // setSearch(ref.current.value);
+      navigate("/recipe/" + ref.current.value);
     }
   };
   return (
