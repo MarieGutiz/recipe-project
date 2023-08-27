@@ -1,25 +1,19 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import DietSelector from "./searchBy/DietSelector";
 import { useNavigate } from "react-router-dom";
+import useRecipeQueryStore from "../store";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const setSearchText = useRecipeQueryStore((r) => r.setSearchText);
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
-  const [selectedDiet, setSelectedDiet] = useState("");
-
-  const handleDietSelector = (diet: string) => {
-    setSelectedDiet(diet);
-  };
-  
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     if (ref.current) {
-      console.log(ref.current.value);
-      console.log("select diet -> " + selectedDiet);
+      setSearchText(ref.current.value);
       navigate("/recipe/" + ref.current.value);
     }
   };
@@ -31,11 +25,11 @@ const SearchInput = () => {
           w={"80%"}
           style={{ backgroundColor: "white", color: "black" }}
           ref={ref}
-          placeholder="What to cook today?.."
+          placeholder="What to cook today?.." 
           variant="filled"
           borderRadius={20}
         />
-        <DietSelector onDietChange={handleDietSelector} />
+        <DietSelector navigateTo={true} />
       </InputGroup>
     </form>
   );

@@ -1,17 +1,27 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { diet } from "../../hooks/useQueryRecipe";
-import { SetStateAction, useState } from "react";
+import useRecipeQueryStore from "../../store";
+import useDiet from "../../hooks/useDiet";
+import { useNavigate } from "react-router-dom";
 
-interface Props{
-  onDietChange: (diet:string) =>void
+interface Props {
+  navigateTo?: boolean;
 }
-const DietSelector = ({ onDietChange }:Props) => {
-  const [dietType, setDiet] = useState(String);
-  const handleDietChange = (selectedDiet:string) => {
-    setDiet(selectedDiet);
-    onDietChange(selectedDiet);
+const DietSelector = ({ navigateTo }: Props) => {
+  const selectedDiet = useRecipeQueryStore((r) => r.recipeQuery.dietLabels);
+  const dietType = useDiet(selectedDiet);
+  const setSelectedDiet = useRecipeQueryStore((r) => r.setDiet);
+  const navigate = useNavigate();
+
+  const handleSelectedDiet = (dietType: string) => {
+    setSelectedDiet(dietType.toLowerCase());
+
+    if (navigateTo) {
+      navigate("/recipe/diet/" + dietType);
+    }
   };
+
   return (
     <Menu>
       <MenuButton
@@ -27,7 +37,10 @@ const DietSelector = ({ onDietChange }:Props) => {
       </MenuButton>
       <MenuList color={"black"}>
         {diet.map((dietType) => (
-          <MenuItem key={dietType} onClick={() => handleDietChange(dietType)}>
+          <MenuItem
+            key={dietType}
+            onClick={() => handleSelectedDiet(dietType.toLowerCase())}
+          >
             {dietType}
           </MenuItem>
         ))}

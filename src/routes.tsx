@@ -18,6 +18,10 @@ const router = createBrowserRouter([
         path: "recipe/:name",
         element: <RecipeExtendedSearch />,
       },
+      {
+        path: "recipe/diet/:dietType",
+        element: <RecipeExtendedSearch />,
+      },
     ],
   },
 ]);
