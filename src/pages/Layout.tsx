@@ -8,7 +8,7 @@ const Layout = () => {
       <Box w={"full"} position="absolute" top={0} left={0} zIndex={"100"}>
         <NavBar />
       </Box>
-      <Box>
+      <Box padding={"7rem"}>
         <Outlet />
       </Box>
 

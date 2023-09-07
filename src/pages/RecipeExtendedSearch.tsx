@@ -1,25 +1,28 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import useRecipies from "../hooks/useRecipes";
-import { useParams } from "react-router";
 import DietSelector from "../components/searchBy/DietSelector";
-const RecipeExtendedSearch = () => {
-  const { name } = useParams();
-  // search in the warehouse
-  const { data, error } = useRecipies();
-  if (!data || error) return null;
-  console.log(data?.hits);
+import RecipeGrid from "../components/recipeGrid/RecipeGrid";
 
-  const recipes = data?.hits.map((hit) => (
-    <div key={hit.recipe.uri}>{hit.recipe.label}</div>
-  ));
+const RecipeExtendedSearch = () => {
   return (
-    <>
-      <Box></Box>
-      <Box paddingTop={40}>
-        {recipes} <DietSelector />
-      </Box>
-      ;
-    </>
+    <Grid
+      templateAreas={{
+        base: `"main"`,
+        lg: `"aside main"`,
+      }}
+      gridTemplateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
+      }}
+    >
+      <Show above="lg">
+        <GridItem area="aside"></GridItem>
+      </Show>
+      <GridItem area="main">
+        <Box>Welcome to our recipe house</Box>
+        <RecipeGrid />
+      </GridItem>
+    </Grid>
   );
 };
 
